@@ -1,0 +1,16 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip install -e ".[dev]"
+      - run: pytest -q
+      - run: |
+          python -m roigate report
+          python -m roigate gate
+      # The aggressive config must FAIL the gate - CI asserts the refusal.
+      - run: "! python -m roigate gate --assumptions tests/aggressive_example.json"

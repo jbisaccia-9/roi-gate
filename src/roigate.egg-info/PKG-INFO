@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: roigate
+Version: 0.1.0
+Summary: Adoption/ROI model that refuses to report a number it can't defend
+Requires-Python: >=3.9
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"

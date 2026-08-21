@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+src/roigate/__init__.py
+src/roigate/__main__.py
+src/roigate/adoption.py
+src/roigate/gate.py
+src/roigate/model.py
+src/roigate/simulate.py
+src/roigate.egg-info/PKG-INFO
+src/roigate.egg-info/SOURCES.txt
+src/roigate.egg-info/dependency_links.txt
+src/roigate.egg-info/requires.txt
+src/roigate.egg-info/top_level.txt
+tests/test_adoption.py
+tests/test_gate.py
+tests/test_model.py

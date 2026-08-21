@@ -1,0 +1,11 @@
+{
+  "_comment": "All values are synthetic examples for a fictional 150-seat deployment.",
+  "total_seats": 150,
+  "excluded_seat_fraction": 0.12,
+  "minutes_saved_per_day": {"heavy": 12, "medium": 6, "light": 2},
+  "workdays_per_month": 21,
+  "hourly_rate": 40,
+  "realization_discount": 0.5,
+  "charge_all_assigned_seats": true,
+  "license_cost_per_seat_month": 25
+}

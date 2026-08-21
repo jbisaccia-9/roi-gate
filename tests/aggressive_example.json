@@ -1,0 +1,11 @@
+{
+  "_comment": "The version of the model a vendor deck would use. The gate exists to refuse this.",
+  "total_seats": 150,
+  "excluded_seat_fraction": 0.0,
+  "minutes_saved_per_day": {"heavy": 25, "medium": 15, "light": 8, "inactive": 3},
+  "workdays_per_month": 22,
+  "hourly_rate": 60,
+  "realization_discount": 1.0,
+  "charge_all_assigned_seats": false,
+  "license_cost_per_seat_month": 0
+}
