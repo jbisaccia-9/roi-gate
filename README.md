@@ -1,5 +1,7 @@
 # roi-gate
 
+[![ci](https://github.com/jbisaccia-9/roi-gate/actions/workflows/ci.yml/badge.svg)](https://github.com/jbisaccia-9/roi-gate/actions) · [captured results](RESULTS.md)
+
 **An adoption/ROI model that refuses to report a number it can't defend.**
 
 Every enterprise AI deployment produces a value claim. Most of them are
