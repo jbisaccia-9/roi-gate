@@ -60,6 +60,34 @@ number is a failing test, permanently.
   committed event log regenerates deterministically from a seed. The method is
   the artifact.
 
+## The flow
+
+```mermaid
+flowchart TB
+    SIM["seeded synthetic events (150 fictional seats)"] --> AD["adoption analytics: depth tiers by feature-area breadth"]
+    AD --> VM["value model: tiered minutes, realization discount, all seats charged, licenses subtracted"]
+    ASM["assumptions.json"] --> VM
+    ASM --> CG
+    VM --> RPT["report: every intermediate exposed (gross, realized, cost, net)"]
+    RPT --> CG{"conservatism gate: was the model biased against the claim?"}
+    CG -- "pass" --> OUT["number is reportable"]
+    CG -- "fail" --> NO["number refused: inflated by construction"]
+
+    subgraph EVAL["Braintrust-shaped eval: data, task, scorers"]
+        D["data: base + vendor-deck assumption sets"] --> T["task: run the gate"] --> SC["scorers: gate_expected, value_regression pin"]
+    end
+    SC -- "regression" --> CIF["CI fails"]
+    SC -.-> BT["Braintrust hosted tracking (obs extra)"]
+```
+
+## Eval structure (Braintrust-shaped)
+
+`python -m roigate suite` runs the `Eval(data, task, scores)` contract
+keyless: the base assumptions must clear the gate, the vendor-deck set must be
+refused, and the fixture deployment must price to exactly $24,048/yr (the
+value-regression pin). Any drift fails CI. `pip install ".[obs]"` +
+`BRAINTRUST_API_KEY` pushes the identical suite to hosted Braintrust.
+
 ## Quickstart
 
 ```

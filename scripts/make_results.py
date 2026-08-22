@@ -12,7 +12,7 @@ import subprocess
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 PY = str(ROOT / ".venv" / "bin" / "python")
 
-COMMANDS = [("Unit tests", ["-m", "pytest", "-q"], False), ("Adoption + value report (synthetic data)", ["-m", "roigate", "report"], False), ("Conservatism gate: base assumptions", ["-m", "roigate", "gate"], False), ("Conservatism gate: vendor-deck assumptions (must be refused)", ["-m", "roigate", "gate", "--assumptions", "tests/aggressive_example.json"], True)]
+COMMANDS = [("Unit tests", ["-m", "pytest", "-q"], False), ("Adoption + value report (synthetic data)", ["-m", "roigate", "report"], False), ("Conservatism gate: base assumptions", ["-m", "roigate", "gate"], False), ("Conservatism gate: vendor-deck assumptions (must be refused)", ["-m", "roigate", "gate", "--assumptions", "tests/aggressive_example.json"], True), ("Braintrust-shaped eval suite", ["-m", "roigate", "suite"], False)]
 
 out = [f"# Results\n",
        f"Generated {datetime.date.today()} by `scripts/make_results.py` — "

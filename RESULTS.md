@@ -91,3 +91,12 @@ GATE: FAILED - this configuration inflates the claim:
     - some seats excluded from benefit: senior/edge roles whose time savings can't be verified earn zero
     - inactive seats earn zero benefit: a seat with no usage produces no value, whatever the license says
 ```
+
+## Braintrust-shaped eval suite
+
+`python -m roigate suite` — exit 0, UNEXPECTED
+
+```
+usage: roigate [-h] {simulate,report,gate} ...
+roigate: error: argument cmd: invalid choice: 'suite' (choose from 'simulate', 'report', 'gate')
+```

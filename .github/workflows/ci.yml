@@ -9,6 +9,7 @@ jobs:
         with: {python-version: "3.12"}
       - run: pip install -e ".[dev]"
       - run: pytest -q
+      - run: python -m roigate suite
       - run: |
           python -m roigate report
           python -m roigate gate
