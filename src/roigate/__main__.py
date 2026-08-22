@@ -16,8 +16,12 @@ def main():
     rp = sub.add_parser("report", help="adoption + value breakdown -> results/report.json")
     rp.add_argument("--assumptions", default=None)
     gp = sub.add_parser("gate", help="apply the conservatism gate to an assumptions file")
+    sub.add_parser("suite", help="Braintrust-shaped eval suite")
     gp.add_argument("--assumptions", default=None)
     args = ap.parse_args()
+    if args.cmd == "suite":
+        from .btsuite import run_local
+        sys.exit(run_local())
     if args.cmd == "simulate":
         simulate.main()
         return

@@ -94,9 +94,28 @@ GATE: FAILED - this configuration inflates the claim:
 
 ## Braintrust-shaped eval suite
 
-`python -m roigate suite` — exit 0, UNEXPECTED
+`python -m roigate suite` — exit 0, OK
 
 ```
-usage: roigate [-h] {simulate,report,gate} ...
-roigate: error: argument cmd: invalid choice: 'suite' (choose from 'simulate', 'report', 'gate')
+PASS  realization_discount applied (<= 0.6)
+  PASS  every assigned seat charged
+  PASS  license costs included
+  PASS  some seats excluded from benefit
+  PASS  inactive seats earn zero benefit
+GATE: PASSED - the model is biased against the claim; the number is reportable.
+  FAIL  realization_discount applied (<= 0.6)
+  FAIL  every assigned seat charged
+  FAIL  license costs included
+  FAIL  some seats excluded from benefit
+  FAIL  inactive seats earn zero benefit
+GATE: FAILED - this configuration inflates the claim:
+    - realization_discount applied (<= 0.6): measured time saved must be discounted before it is claimed as value
+    - every assigned seat charged: charging only active seats hides the cost of shelfware
+    - license costs included: value net of nothing is not net value
+    - some seats excluded from benefit: senior/edge roles whose time savings can't be verified earn zero
+    - inactive seats earn zero benefit: a seat with no usage produces no value, whatever the license says
+  base-conservative: 1.0
+  vendor-deck: 1.0
+  value_regression: 1.0
+SUITE: PASS - no regressions.
 ```
