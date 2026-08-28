@@ -12,7 +12,7 @@ and enforces it in CI: a configuration that inflates the number fails the
 build.
 
 On the same synthetic adoption data, the vendor-deck assumptions price this
-deployment at **$517704/yr**. The gated model reports **$24,048/yr** — a
+deployment at **$517,704/yr**. The gated model reports **$24,048/yr** — a
 number one-tenth the size, and the only one of the two that survives a
 skeptical CFO. The gate's job is to make the big number impossible to produce
 quietly.
