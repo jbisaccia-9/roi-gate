@@ -1,4 +1,4 @@
-# roi-gate
+$517,704
 
 [![ci](https://github.com/jbisaccia-9/roi-gate/actions/workflows/ci.yml/badge.svg)](https://github.com/jbisaccia-9/roi-gate/actions) · [captured results](RESULTS.md)
 
